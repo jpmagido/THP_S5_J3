@@ -18,8 +18,6 @@ class StaticController < ApplicationController
   def home
   	
   end
-  def user
-  	@id_user = params[:nbr]
-  end
+
 end
 

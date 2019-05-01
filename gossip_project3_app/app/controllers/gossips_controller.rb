@@ -9,10 +9,6 @@ class GossipsController < ApplicationController
   end
 
 
-  def done
-    
-  end
-
   def new
     @gossip = Gossip.new
 
@@ -26,6 +22,7 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find(params[:id])
     @gossip.update(title: "#{params[:gossip][:title]}", content: "#{params[:gossip][:content]}", user_id: 4)
     redirect_to gossips_index_path
+
   end
 
   def destroy
@@ -38,6 +35,8 @@ class GossipsController < ApplicationController
 	@id_lien = params[:id]
   @gossip_one = Gossip.find(params[:id])
   @gossip_del = Gossip.find(params[:id]).id
+  @id_user = User.find(Gossip.find(params[:id]).user_id).id
+  @coment = Tag.find(JoinTableTagGossip.find(Gossip.find(params[:id]).id).gossip_id).title
   end
 
 end
