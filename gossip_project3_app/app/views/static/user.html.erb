@@ -1,0 +1,12 @@
+<h1>Hello ma ptite salope !</h1><br><br>
+
+<p>Voici ton auteur préféré :</p><br>
+
+
+<div class="card" style="width: 600px;">
+  <div class="card-body">
+    <h5 class="card1-title"> <%=User.find(@id_user).last_name%></h5>
+    <h6 class="card1-subtitle mb-2 text-muted"><%=User.find(@id_user).first_name%></h6>
+    <p class="card1-text">Age: <%=User.find(@id_user).age%> ans<br>E-mail: <%=User.find(@id_user).email%><br><br><u>Description:</u> <br><%=User.find(@id_user).description%></p>
+  </div>
+</div>
